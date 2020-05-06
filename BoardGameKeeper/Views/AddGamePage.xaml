@@ -7,9 +7,26 @@
              x:Class="BoardGameKeeper.Views.AddGamePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+			<StackLayout Orientation="Horizontal"
+            Margin="20,20,20,20">
+                <Label Text="Game name:"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Start" />
+				<Entry x:Name="gameNameEntry" 
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="StartAndExpand"
+                    WidthRequest="300" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal"
+            Margin="20,0,20,20">
+				<Label Text="Is this game in your rotation?"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+				<CheckBox x:Name="inRotationCheckBox" 
+                    IsChecked="True"/>
+			</StackLayout>
+			<Button Text="Add Game"
+                Clicked="OnAddGameButtonClicked" />
+		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

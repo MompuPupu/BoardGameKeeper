@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
-
+using System.Diagnostics;
 
 namespace BoardGameKeeper.Model
 {
@@ -16,7 +16,10 @@ namespace BoardGameKeeper.Model
 
 		public override BoardGame ChooseGame(ObservableCollection<BoardGame> games)
 		{
-			return games[rnd.Next(0, games.Count - 1)];
+			BoardGame newGame = games[rnd.Next(0, games.Count)];
+
+			Debug.WriteLine("Game chosen:  ", newGame.Name);
+			return newGame;
 		}
 	}
 }

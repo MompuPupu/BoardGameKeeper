@@ -12,7 +12,8 @@ namespace BoardGameKeeper.Data
 
 		static BoardGameDatabase() 
 		{
-			AllGames = new ObservableCollection<BoardGame>()
+			GamesInRotation = new ObservableCollection<BoardGame>();
+			AllGames = new ObservableCollection<BoardGame>
 			{
 				new BoardGame("Terra Mystica"),
 				new BoardGame("Spirit Island", false),
@@ -20,15 +21,20 @@ namespace BoardGameKeeper.Data
 				new BoardGame("Agricola"),
 				new BoardGame("Machina Arcana")
 			};
-			InitiliaseGamesInRotationList();
 		}
+		
 
-		private static void InitiliaseGamesInRotationList()
+		public static void RefreshGamesInRotationList(ObservableCollection<BoardGame> newInRotations)
 		{
-			GamesInRotation = new ObservableCollection<BoardGame>();
-			foreach (BoardGame game in AllGames)
+			/* Runs through the new list of new bools and compares them to the inrotation on each boardgame in the all list.
+				Needs to be all list as the gamelistview uses all the games. */
+			
+			for (int i = 0; i < newInRotations.Count; i++)
 			{
-				ManageGameInRotation(game);
+				if (!(AllGames[i].InRotation == newInRotations[i].InRotation))
+				{
+					ManageGameInRotation(AllGames[i]);
+				}
 			}
 		}
 
@@ -46,7 +52,6 @@ namespace BoardGameKeeper.Data
 				}
 			}
 		}
-
 		public static void AddGameToDatabase(BoardGame newGame)
 		{
 			AllGames.Add(newGame);
@@ -64,9 +69,5 @@ namespace BoardGameKeeper.Data
 				GamesInRotation.Remove(gameToDelete);
 			}
 		}
-		
-
-
-		//TODO: Implement
 	}
 }

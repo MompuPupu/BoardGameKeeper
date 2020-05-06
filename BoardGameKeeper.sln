@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameKeeper.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameKeeper.iOS", "BoardGameKeeper.iOS\BoardGameKeeper.iOS.csproj", "{9A547438-B9CE-4133-9142-FC1F78539709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameKeeper", "BoardGameKeeper\BoardGameKeeper.csproj", "{6A79C984-C9A8-4768-BB42-6C7F6465AC1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardGameKeeper", "BoardGameKeeper\BoardGameKeeper.csproj", "{6A79C984-C9A8-4768-BB42-6C7F6465AC1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

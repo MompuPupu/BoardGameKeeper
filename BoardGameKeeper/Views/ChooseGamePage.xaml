@@ -6,8 +6,8 @@
              mc:Ignorable="d"
              x:Class="BoardGameKeeper.Views.ChooseGamePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Click below to choose a game to play!"
+		<StackLayout >
+            <Label
                 x:Name="gameNameText"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

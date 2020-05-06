@@ -8,9 +8,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BoardGameKeeper.ViewModels;
 
-
-//TODO: Write XAML for this page...
-
 namespace BoardGameKeeper.Views
 {
 	//[XamlCompilation(XamlCompilationOptions.Compile)]

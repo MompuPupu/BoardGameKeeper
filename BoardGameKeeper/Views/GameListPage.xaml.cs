@@ -3,49 +3,47 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using BoardGameKeeper.ViewModels;
+using BoardGameKeeper.Data;
 
 namespace BoardGameKeeper.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 
-	//TODO: fix code-behind (xaml implemented)
 	public partial class GameListPage : ContentPage
 	{
-		public ObservableCollection<string> Items { get; set; }
+		GameListViewModel viewModel;
 
 		public GameListPage()
 		{
 			InitializeComponent();
-
-			Items = new ObservableCollection<string>
-			{
-				"Item 1",
-				"Item 2",
-				"Item 3",
-				"Item 4",
-				"Item 5"
-			};
-
-			//MyListView.ItemsSource = Items;
+			viewModel = new GameListViewModel();
+			gameListView.ItemsSource = viewModel.AllGames;
 		}
 
-		async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+		private async void HandleGameTapped(object sender, ItemTappedEventArgs e)
 		{
 			if (e.Item == null)
 				return;
 
-			await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+			//TODO: Write code to go to another page for the boardgame itself
+			await DisplayAlert("Game was tapped.", "A game was tapped", "OK");
 
-			//Deselect Item
+			//Deselect game
 			((ListView)sender).SelectedItem = null;
 		}
 
-		public void HandleGameTapped(object sender, ItemTappedEventArgs e)
+		// Triggers change to bool variable in the Viewmodel to reset the gamesInRotation list in the BGDB
+		private void InRotationChanged(object sender, CheckedChangedEventArgs e)
 		{
+			viewModel.InRotationCheckedChanged();
+		}
 
+		protected override void OnDisappearing()
+		{
+			viewModel.CheckForChangedInRotation();
 		}
 
 	}

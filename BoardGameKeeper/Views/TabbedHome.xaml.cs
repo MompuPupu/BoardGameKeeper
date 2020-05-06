@@ -15,6 +15,7 @@ namespace BoardGameKeeper.Views
 		public TabbedHome()
 		{
 			InitializeComponent();
+			this.Title = "Board Game Keeper";
 		}
 	}
 }

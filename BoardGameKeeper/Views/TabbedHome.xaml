@@ -6,7 +6,7 @@
 			 xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
 			 xmlns:local="clr-namespace:BoardGameKeeper.Views;assembly=BoardGameKeeper"
              mc:Ignorable="d"
-             x:Class="BoardGameKeeper.Views.TabbedHome">
+             x:Class="BoardGameKeeper.Views.TabbedHome" >
 
 	<NavigationPage Title="Choose Game">
 		<x:Arguments>
@@ -26,5 +26,5 @@
 		</x:Arguments>
 	</NavigationPage>
 
-	<ContentPage Title="Settings" />
+	<NavigationPage Title="Settings" />
 </TabbedPage>
