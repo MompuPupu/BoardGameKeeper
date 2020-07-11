@@ -27,10 +27,14 @@ namespace BoardGameKeeper.Views
 			GetNewGame();
 		}
 
-		void GetNewGame()
+		async void GetNewGame()
 		{
-			// changes ChosenGame in the model view		
-			viewModel.ChooseGame();
+			bool newGameChosen = viewModel.ChooseGame();
+			// changes ChosenGame in the model view
+			if (!newGameChosen)
+			{
+				await DisplayAlert("No games in rotation.", "Please add games to rotation and try again.", "OK");
+			}
 		}
 	}
 }

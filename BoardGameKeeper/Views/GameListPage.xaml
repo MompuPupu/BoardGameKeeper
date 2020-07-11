@@ -18,8 +18,7 @@
 						<Label Text="{Binding Name}" />
 						<Label Text="In rotation" 
 							HorizontalOptions="End"/>
-						<CheckBox IsChecked="{Binding InRotation}" 
-							CheckedChanged="InRotationChanged" />
+						<CheckBox IsChecked="{Binding InRotation, Mode=TwoWay}" />
 					</StackLayout>
 				</ViewCell>
 			</DataTemplate>

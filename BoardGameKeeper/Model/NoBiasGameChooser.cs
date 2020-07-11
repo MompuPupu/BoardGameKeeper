@@ -7,8 +7,11 @@ using System.Diagnostics;
 
 namespace BoardGameKeeper.Model
 {
-	class NoBiasGameChooser : BaseGameChooser
+	class NoBiasGameChooser : GameChooser
 	{
+
+		public override ChooserBias ChooserBias => ChooserBias.NOBIAS;
+
 		public NoBiasGameChooser()
 		{
 
@@ -16,10 +19,17 @@ namespace BoardGameKeeper.Model
 
 		public override BoardGame ChooseGame(ObservableCollection<BoardGame> games)
 		{
-			BoardGame newGame = games[rnd.Next(0, games.Count)];
+			if (games.Count == 1)
+			{
+				return games[0];
+			}
+			else
+			{
+				BoardGame newGame = games[rnd.Next(games.Count)];
 
-			Debug.WriteLine("Game chosen:  ", newGame.Name);
-			return newGame;
+				Debug.WriteLine("Game chosen:  " + newGame.Name);
+				return newGame;
+			}
 		}
 	}
 }

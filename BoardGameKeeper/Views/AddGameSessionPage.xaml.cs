@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoardGameKeeper.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,13 @@ namespace BoardGameKeeper.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddGameSessionPage : ContentPage
 	{
+		AddGameSessionViewModel viewModel;
+
 		public AddGameSessionPage()
 		{
 			InitializeComponent();
+			viewModel = new AddGameSessionViewModel();
+			gamePlayed.ItemsSource = 
 		}
 
 		private void OnAddGameSessionClicked(object sender, EventArgs args)

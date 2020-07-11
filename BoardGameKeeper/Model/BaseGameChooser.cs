@@ -6,10 +6,12 @@ using System.Collections.ObjectModel;
 
 namespace BoardGameKeeper.Model
 { 
-	abstract class BaseGameChooser
+	abstract class GameChooser
 	{
-		private protected Random rnd = new Random();
+		protected Random rnd = new Random();
 		public abstract BoardGame ChooseGame(ObservableCollection<BoardGame> games);
+
+		public abstract ChooserBias ChooserBias { get; }
 
 	}
 }

@@ -5,13 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BoardGameKeeper.Views.AddGameSessionPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-			<Button Text="Add Session"
-                Clicked="OnAddGameSessionClicked" />
+
+	<ContentPage.Content>
+		<StackLayout>
+			<StackLayout Orientation="Horizontal"
+            Margin="20,20,20,20">
+				<Label Text="Game:"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Start" />
+				<Picker x:Name="gamePlayed"
+					Title="Choose Game Played" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal"
+            Margin="20,0,20,20">
+				<Label Text="Is this game in your rotation?"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+				<CheckBox x:Name="inRotationCheckBox" 
+                    IsChecked="True"/>
+			</StackLayout>
+			<Button Text="Add Game"
+                Clicked="OnAddGameButtonClicked" />
 		</StackLayout>
-    </ContentPage.Content>
+	</ContentPage.Content>
 </ContentPage>

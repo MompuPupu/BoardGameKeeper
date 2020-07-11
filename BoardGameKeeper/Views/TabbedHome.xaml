@@ -20,11 +20,22 @@
 		</x:Arguments>
 	</NavigationPage>
 
+	<NavigationPage Title="Add Session">
+		<x:Arguments>
+			<local:AddGameSessionPage />
+		</x:Arguments>
+	</NavigationPage>
+
 	<NavigationPage Title="Game List">
 		<x:Arguments>
 			<local:GameListPage />
 		</x:Arguments>
 	</NavigationPage>
 
-	<NavigationPage Title="Settings" />
+	<NavigationPage Title="Settings">
+		<x:Arguments>
+
+		</x:Arguments>
+	</NavigationPage>
+
 </TabbedPage>

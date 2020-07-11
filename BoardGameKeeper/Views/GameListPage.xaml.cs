@@ -28,23 +28,13 @@ namespace BoardGameKeeper.Views
 			if (e.Item == null)
 				return;
 
+			var xx = e.ItemIndex;
+
 			//TODO: Write code to go to another page for the boardgame itself
 			await DisplayAlert("Game was tapped.", "A game was tapped", "OK");
 
 			//Deselect game
 			((ListView)sender).SelectedItem = null;
 		}
-
-		// Triggers change to bool variable in the Viewmodel to reset the gamesInRotation list in the BGDB
-		private void InRotationChanged(object sender, CheckedChangedEventArgs e)
-		{
-			viewModel.InRotationCheckedChanged();
-		}
-
-		protected override void OnDisappearing()
-		{
-			viewModel.CheckForChangedInRotation();
-		}
-
 	}
 }
